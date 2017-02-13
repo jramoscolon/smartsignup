@@ -1,0 +1,144 @@
+<%= form_for @registro, :html => { :class => "form-horizontal registro" } do |f| %>
+
+  <% if @registro.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@registro.errors.count, "error") %> prohibited this registro from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @registro.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nombre, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nombre) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :apellido, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :apellido, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:apellido) %>
+  </div>
+  <!-- <div class="form-group">
+    <%= f.label :puesto, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :puesto, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:puesto) %>
+  </div> -->
+
+  <!-- Static select menu in form -->
+  <div class="form-group">
+    <%= f.label "Puesto", class: 'control-label col-lg-2' %>
+    <div class="controls col-lg-10">
+      <%= f.select(:puesto, options_for_select([['DIRECTOR', 'DIRECTOR'], ['MAESTRO', 'MAESTRO'], ['COORDINADOR', 'COORDINADOR'], ['FACILITADOR', 'FACILITADOR'], ['OTRO', 'OTRO']]), { include_blank: true }) %>
+    </div>
+  </div><!-- End of static select menu -->
+
+  <!-- <div class="form-group">
+    <%= f.label :materia, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :materia, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:materia) %>
+  </div> -->
+
+  <div class="form-group">
+    <%= f.label "Materia", class: 'control-label col-lg-2' %>
+    <div class="controls col-lg-10">
+      <%= f.select(:materia, options_for_select([['ESPAÑOL', 'ESPAÑOL'], ['INGLÉS', 'INGLÉS'], ['SOCIALES', 'SOCIALES'], ['MATEMÁTICAS', 'MATEMÁTICAS'], ['CIENCIAS', 'CIENCIAS'], ['RELIGIÓN', 'RELIGIÓN'], ['OTRA', 'OTRA']]), { include_blank: true }) %>
+    </div>
+  </div><!-- End of static select menu -->
+
+  <div class="form-group">
+    <%= f.label :centro, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :centro, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:centro) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :pueblo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :pueblo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:pueblo) %>
+  </div>
+  <!-- <div class="form-group">
+    <%= f.label :nivel, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :nivel, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:nivel) %>
+  </div> -->
+
+  <div class="form-group">
+    <%= f.label "Nivel", class: 'control-label col-lg-2' %>
+    <div class="controls col-lg-10">
+      <%= f.select(:nivel, options_for_select([['PREESCOLAR', 'PREESCOLAR'], ['ELEMENTAL', 'ELEMENTAL'], ['INTERMEDIA', 'INTERMEDIA'], ['SUPERIOR', 'SUPERIOR'], ['K', 'K'], ['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5'], ['6', '6'], ['7', '7'], ['8', '8'], ['9', '9'], ['10', '10'], ['11', '11'], ['12', '12']]), { include_blank: true }) %>
+    </div>
+  </div><!-- End of static select menu -->
+
+  <!-- <div class="form-group">
+    <%= f.label :sec, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :sec, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sec) %>
+  </div> -->
+
+  <div class="form-group">
+    <%= f.label "SEC", class: 'control-label col-lg-2' %>
+    <div class="controls col-lg-10">
+      <%= f.select(:sec, options_for_select([['SÍ', 'SÍ'], ['NO', 'NO']]), { include_blank: true }) %>
+    </div>
+  </div><!-- End of static select menu -->
+
+  <div class="form-group">
+    <%= f.label :email, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:email) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :telefono, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :telefono, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:telefono) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comentario, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :comentario, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:comentario) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:user_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registros_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

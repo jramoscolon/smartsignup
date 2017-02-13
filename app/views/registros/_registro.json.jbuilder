@@ -1,0 +1,2 @@
+json.extract! registro, :id, :nombre, :apellido, :puesto, :materia, :centro, :pueblo, :nivel, :sec, :email, :telefono, :comentario, :user_id, :created_at, :updated_at
+json.url registro_url(registro, format: :json)

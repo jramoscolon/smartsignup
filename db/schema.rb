@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213165516) do
+ActiveRecord::Schema.define(version: 20170213200029) do
+
+  create_table "registros", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "puesto"
+    t.string   "materia"
+    t.string   "centro"
+    t.string   "pueblo"
+    t.string   "nivel"
+    t.string   "sec"
+    t.string   "email"
+    t.string   "telefono"
+    t.text     "comentario"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "registros", ["user_id"], name: "index_registros_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
