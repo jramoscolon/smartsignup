@@ -4,7 +4,7 @@ class RegistrosController < ApplicationController
   # GET /registros
   # GET /registros.json
   def index
-    @registros = Registro.all
+    @registros = Registro.paginate(page: params[:page], per_page: 5)
   end
 
   # GET /registros/1
