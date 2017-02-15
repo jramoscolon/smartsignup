@@ -1,10 +1,16 @@
 class RegistrosController < ApplicationController
   before_action :set_registro, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /registros
   # GET /registros.json
   def index
     @registros = Registro.paginate(page: params[:page], per_page: 5)
+    respond_to do |format|
+      format.html
+      format.csv { send_data text: @registros.to_csv }
+      # For excel exporting
+      format.xls # { send_data @registros.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /registros/1
@@ -25,6 +31,7 @@ class RegistrosController < ApplicationController
   # POST /registros.json
   def create
     @registro = Registro.new(registro_params)
+    @registro.user = current_user
 
     respond_to do |format|
       if @registro.save

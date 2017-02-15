@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <Cell><Data ss:Type="String">Nombre</Data></Cell>
+        <Cell><Data ss:Type="String">Apellido</Data></Cell>
+        <Cell><Data ss:Type="String">Puesto</Data></Cell>
+        <Cell><Data ss:Type="String">Materia</Data></Cell>
+        <Cell><Data ss:Type="String">Centro</Data></Cell>
+        <Cell><Data ss:Type="String">Pueblo</Data></Cell>
+        <Cell><Data ss:Type="String">Nivel</Data></Cell>
+        <Cell><Data ss:Type="String">SEC</Data></Cell>
+        <Cell><Data ss:Type="String">Email</Data></Cell>
+        <Cell><Data ss:Type="String">Teléfono</Data></Cell>
+        <Cell><Data ss:Type="String">Comentarios</Data></Cell>
+      </Row>
+    <% @registros.each do |registro| %>
+      <Row>
+        <Cell><Data ss:Type="Number"><%= registro.id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.nombre %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.apellido %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.puesto %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.materia %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.centro %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.pueblo %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.nivel %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.sec %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.email %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.telefono %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= registro.comentario %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
