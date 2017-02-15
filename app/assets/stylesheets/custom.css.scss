@@ -78,7 +78,8 @@
 }
 
 .front {
-	margin: 100px 0px;
+	margin-top: 12%;
+	/* margin-left: -15px; this is to override the margin weirdness on the home page */
 	z-index: 9999;
 }
 
@@ -113,6 +114,16 @@
 
 table a {
 	border-bottom: 1px solid Gray;
+}
+
+.fancy-font {
+	font-family: 'Lalezar', cursive;
+	font-size: 1.2em;
+	color: #e00000;
+}
+
+.fancy-black {
+	color: black;
 }
 
 .jumbotron {
