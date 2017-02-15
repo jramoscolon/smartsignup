@@ -4,7 +4,7 @@ class RegistrosController < ApplicationController
   # GET /registros
   # GET /registros.json
   def index
-    @registros = Registro.paginate(page: params[:page], per_page: 5) # unless request.format == 'xls'
+    @registros = Registro.all  # paginate(page: params[:page], per_page: 5) # unless request.format == 'xls'
     
     respond_to do |format|
       format.html
