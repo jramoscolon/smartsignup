@@ -28,6 +28,7 @@
 .navbar-brand {
 	font-family: 'Lalezar', cursive;
 	font-size: 2em;
+	padding: 19px 15px;
 }
 
 .nav.navbar-right {
@@ -71,6 +72,32 @@
 .btn-primary:visited, .btn-danger:visited {
 	color: #fff;
 }
+
+.front {
+	margin: 100px 0px;
+	z-index: 9999;
+}
+
+.background-blur {
+	position: fixed;
+	top: 0;
+ 	left: 0;
+ 	right: 0;
+ 	z-index: -1;
+
+	display: block;
+	background-image: url('background_image.jpg');
+	opacity: 0.3;
+	width: 2560px;
+	height: 1440px;
+
+ 	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-o-filter: blur(10px);
+	-ms-filter: blur(10px);
+	filter: blur(10px);
+}
+
 
 
 .features {
