@@ -7,7 +7,7 @@
   <Worksheet ss:Name="Sheet1">
     <Table>
       <Row>
-        <Cell><Data ss:Type="String">ID</Data></Cell>
+        <!-- <Cell><Data ss:Type="String">ID</Data></Cell> -->
         <Cell><Data ss:Type="String">Nombre</Data></Cell>
         <Cell><Data ss:Type="String">Apellido</Data></Cell>
         <Cell><Data ss:Type="String">Puesto</Data></Cell>
@@ -22,7 +22,7 @@
       </Row>
     <% @registros.each do |registro| %>
       <Row>
-        <Cell><Data ss:Type="Number"><%= registro.id %></Data></Cell>
+        <!-- <Cell><Data ss:Type="Number"><%= registro.id %></Data></Cell> -->
         <Cell><Data ss:Type="String"><%= registro.nombre %></Data></Cell>
         <Cell><Data ss:Type="String"><%= registro.apellido %></Data></Cell>
         <Cell><Data ss:Type="String"><%= registro.puesto %></Data></Cell>
