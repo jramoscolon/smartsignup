@@ -92,18 +92,20 @@
 
 	display: block;
 	background-image: url('background_image.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 	opacity: 0.3;
-	width: 2560px;
-	height: 1440px;
-
+	height: 1000px;
+	
+	/* This applies a blur
+ 	/**********
  	-webkit-filter: blur(10px);
 	-moz-filter: blur(10px);
 	-o-filter: blur(10px);
 	-ms-filter: blur(10px);
 	filter: blur(10px);
+	***********/
 }
-
-
 
 .features {
 	ul {
